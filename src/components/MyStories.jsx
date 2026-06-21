@@ -7,7 +7,7 @@ import { getPlainText } from '../utils/textUtils';
 export default function MyStories({ stories, loadStories }) {
   const { token, loggedInUser } = useContext(AuthContext);
   const userStories = stories.filter(s => s.author?.username === loggedInUser);
-  const API_BASE = 'http://localhost:5000/api';
+  const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:5000/api';
 
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this story completely?")) return;

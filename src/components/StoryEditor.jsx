@@ -10,7 +10,7 @@ export default function StoryEditor({ stories, loadStories }) {
   const { id } = useParams(); // Gets ID if we are editing
   const navigate = useNavigate();
   const { token } = useContext(AuthContext);
-  const API_BASE = 'http://localhost:5000/api';
+  const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:5000/api';
 
   const [title, setTitle] = useState('');
   const [content, setContent] = useState(''); 
