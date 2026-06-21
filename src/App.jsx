@@ -14,7 +14,7 @@ import StoryEditor from './components/StoryEditor';
 function AppRoutes() {
   const { token } = useContext(AuthContext);
   const [stories, setStories] = useState([]);
-  const API_BASE = 'http://localhost:5000/api';
+  const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:5000/api';
 
   // Fetch stories whenever the user logs in
   useEffect(() => {
